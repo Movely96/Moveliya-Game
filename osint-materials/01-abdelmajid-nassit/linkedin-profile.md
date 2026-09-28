@@ -1,4 +1,4 @@
-Abdelmajid Sandal
+Abdelmajid Nassit
 Director at GCE - Genie Civil Engineering School
 Beni Mellal, Morocco
 
@@ -18,7 +18,7 @@ Education:
   Engineering Degree, Civil Engineering - Graduated 1996
 
 Contact:
-a.sandal@gce-edu.ma
+a.nassit@gce-edu.ma
 
 Interests:
  Civil Engineering Innovation, Technical Education Reform

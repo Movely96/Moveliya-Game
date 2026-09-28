@@ -6,8 +6,8 @@ echo "   MOVELIYA GAME - Lab Setup Script"
 
 # ---- Step 1: Create Linux accounts ----
 echo "[*] Creating user accounts..."
-sudo useradd -m nassit 2>/dev/null || true
-echo "nassit:Nassit1973" | sudo chpasswd
+sudo useradd -m sandal 2>/dev/null || true
+echo "sandal:Sandal1973" | sudo chpasswd
 
 sudo useradd -m mehdi 2>/dev/null || true
 echo "mehdi:Lilm1980" | sudo chpasswd
@@ -18,11 +18,11 @@ echo "jannat:Mimi2018" | sudo chpasswd
 
 # ---- Step 2: Populate home folders ----
 echo "[*] Populating home directories..."
-sudo -u nassit mkdir -p /home/nassit/Pictures /home/nassit/Documents
-sudo -u nassit touch /home/nassit/Pictures/family_photo.jpg
-sudo -u nassit touch /home/nassit/Pictures/graduation_1996.jpg
-sudo -u nassit touch /home/nassit/Pictures/barcelona_match.jpg
-echo "Meeting with FSTBM alumni association next week." | sudo -u nassit tee /home/nassit/Documents/notes.txt > /dev/null
+sudo -u sandal mkdir -p /home/sandal/Pictures /home/sandal/Documents
+sudo -u sandal touch /home/sandal/Pictures/family_photo.jpg
+sudo -u sandal touch /home/sandal/Pictures/graduation_1996.jpg
+sudo -u sandal touch /home/sandal/Pictures/barcelona_match.jpg
+echo "Meeting with FSTBM alumni association next week." | sudo -u sandal tee /home/sandal/Documents/notes.txt > /dev/null
 
 sudo -u mehdi mkdir -p /home/mehdi/Pictures /home/mehdi/Documents
 sudo -u mehdi touch /home/mehdi/Pictures/lilm_dog.jpg
@@ -39,12 +39,12 @@ echo "Print exam papers - deadline Friday." | sudo -u jannat tee /home/jannat/Do
 # ---- Step 3: Hidden files with web credentials ----
 echo "[*] Planting hidden credential files..."
 
-sudo -u nassit mkdir -p /home/nassit/.hidden
-cat <<'EOF' | sudo -u nassit tee /home/nassit/.hidden/portal_access.txt > /dev/null
+sudo -u sandal mkdir -p /home/sandal/.hidden
+cat <<'EOF' | sudo -u sandal tee /home/sandal/.hidden/portal_access.txt > /dev/null
 GCE Staff Portal - Access Notes
 
 uni-web login:
-username: abdelmajid.nassit
+username: abdelmajid.sandal
 password: Bagzhgu4yft7
 EOF
 
@@ -87,7 +87,7 @@ sudo tee /var/www/html/gce/config.php > /dev/null <<'EOF'
 <?php
 session_start();
 $users = [
-    "abdelmajid.nassit" => "Bagzhgu4yft7",
+    "abdelmajid.sandal" => "Bagzhgu4yft7",
     "mehdi.medali"      => "Dh5fbueR4mQA",
     "jannat.lmilali"    => "Kx8pQ2vNzL7m",
 ];
@@ -258,7 +258,7 @@ GCE combines rigorous technical training with hands-on practice, preparing stude
 <h2>Our Leadership</h2>
 <p class="subtitle">Guided by experienced educators and administrators</p>
 <div class="leader-grid">
-<div class="leader-card"><img src="assets/nassit.jpeg" class="leader-photo" alt="Abdelmajid Nassit"><h3>Abdelmajid Nassit</h3><p class="role">Director</p><p>25+ years in civil engineering education, FSTBM alumnus.</p></div>
+<div class="leader-card"><img src="assets/sandal.jpeg" class="leader-photo" alt="Abdelmajid Sandal"><h3>Abdelmajid Sandal</h3><p class="role">Director</p><p>25+ years in civil engineering education, FSTBM alumnus.</p></div>
 <div class="leader-card"><img src="assets/mehdi.jpeg" class="leader-photo" alt="Mehdi Med Ali"><h3>Mehdi Med Ali</h3><p class="role">Deputy Director</p><p>Former Structural Mechanics professor, published researcher.</p></div>
 <div class="leader-card"><div class="leader-avatar">JL</div><h3>Jannat Lmilali</h3><p class="role">Secretary </p><p>Manages students.</p></div>
 </div>
@@ -297,7 +297,7 @@ sudo tee /var/www/html/gce/about.php > /dev/null <<'EOF'
 <div class="page">
 <h1>About GCE</h1>
 <p>Founded to train the next generation of civil engineers, GCE (Genie Civil Engineering) has been a cornerstone of technical education in the region for over two decades.</p>
-<p>GCE is led by Director Abdelmajid Nassit, alongside Deputy Director Mehdi Med Ali, supported by our dedicated administrative staff including Secretary Jannat Lmilali.</p>
+<p>GCE is led by Director Abdelmajid Sandal, alongside Deputy Director Mehdi Med Ali, supported by our dedicated administrative staff including Secretary Jannat Lmilali.</p>
 </div>
 </body>
 </html>
@@ -366,7 +366,7 @@ sudo tee /var/www/html/gce/staff.php > /dev/null <<'EOF'
 <div class="page">
 <h1>Staff Directory</h1>
 <div class="card-grid">
-<div class="card"><h3>Abdelmajid Nassit</h3><p>Director</p></div>
+<div class="card"><h3>Abdelmajid Sandal</h3><p>Director</p></div>
 <div class="card"><h3>Mehdi Med Ali</h3><p>Deputy Director</p></div>
 <div class="card"><h3>Jannat Lmilali</h3><p>Secretary - Exam Administration</p></div>
 </div>
@@ -470,7 +470,7 @@ $user = $_SESSION['user'];
 <a href="logout.php" class="logout-link">Logout</a></nav>
 <div class="portal-content">
 <h1>Welcome, <?= htmlspecialchars($user) ?></h1>
-<?php if ($user === "abdelmajid.nassit"): ?>
+<?php if ($user === "abdelmajid.sandal"): ?>
 <div class="news-item"><h3>Reunion - Exam Committee</h3><p>Today, 2:00 PM - Building A, Conference Room.</p></div>
 <div class="news-item"><h3>Budget Review</h3><p>Tomorrow, 10:00 AM - Review Q4 department budget.</p></div>
 <div class="news-item"><h3>Pending Signatures</h3><p>3 administrative documents awaiting approval.</p></div>
@@ -528,7 +528,7 @@ $user = $_SESSION['user'];
 <a href="logout.php" class="logout-link">Logout</a></nav>
 <div class="portal-content">
 <h1>Class Schedule</h1>
-<?php if ($user === "abdelmajid.nassit"): ?>
+<?php if ($user === "abdelmajid.sandal"): ?>
 <div class="news-item">Monday - Director's Meetings - 9:00 AM</div>
 <div class="news-item">Wednesday - Budget Review - 10:00 AM</div>
 <div class="news-item">Friday - Exam Committee - 2:00 PM</div>
@@ -538,7 +538,7 @@ $user = $_SESSION['user'];
 <div class="news-item">Thursday - Seismic Engineering - 11:00 AM</div>
 <?php elseif ($user === "jannat.lmilali"): ?>
 <div class="news-item">Monday - Structural Mechanics - 9:00 AM (Prof. Med Ali)</div>
-<div class="news-item">Monday - Geotechnical Engineering - 11:00 AM (Prof. Nassit)</div>
+<div class="news-item">Monday - Geotechnical Engineering - 11:00 AM (Prof. Sandal)</div>
 <div class="news-item">Wednesday - Construction Management - 10:00 AM</div>
 <div class="news-item">Friday - Structural Mechanics Lab - 2:00 PM</div>
 <?php endif; ?>
@@ -604,7 +604,7 @@ $selected = $_GET['class'] ?? null;
 <?php elseif ($user === "mehdi.medali"): ?>
 <div class="news-item">Structural Mechanics - Class Average: 14.5/20</div>
 <div class="news-item">Structural Mechanics Lab - Class Average: 15.2/20</div>
-<?php elseif ($user === "abdelmajid.nassit"): ?>
+<?php elseif ($user === "abdelmajid.sandal"): ?>
 <div class="news-item">Structural Mechanics - Class Average: 14.5/20</div>
 <div class="news-item">Geotechnical Engineering - Class Average: 13.8/20</div>
 <div class="news-item">Construction Management - Class Average: 16.0/20</div>
@@ -690,7 +690,7 @@ EOF
 # ---- Copy character images ----
 echo "[*] Copying images..."
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-sudo cp "$SCRIPT_DIR/assets/nassit.jpeg" /var/www/html/gce/assets/nassit.jpeg
+sudo cp "$SCRIPT_DIR/assets/sandal.jpeg" /var/www/html/gce/assets/sandal.jpeg
 sudo cp "$SCRIPT_DIR/assets/mehdi.jpeg" /var/www/html/gce/assets/mehdi.jpeg
 sudo cp "$SCRIPT_DIR/assets/wrong.jpeg" /var/www/html/gce/assets/wrong.jpeg
 sudo cp "$SCRIPT_DIR/assets/right.jpeg" /var/www/html/gce/assets/right.jpeg

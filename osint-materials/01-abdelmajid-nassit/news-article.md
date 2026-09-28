@@ -1,9 +1,9 @@
 MAROC INGENIERIE MAG - Edition Trimestrielle
 "Portraits d'Educateurs" Series
 
-TITLE: Abdelmajid Sandal, l'homme qui modernise le genie civil marocain
+TITLE: Abdelmajid Nassit, l'homme qui modernise le genie civil marocain
 
-Directeur de l'ecole GCE depuis 2015, Abdelmajid Sandal est connu
+Directeur de l'ecole GCE depuis 2015, Abdelmajid Nassit est connu
 pour son franc-parler et sa passion pour le FC Barcelone, qu'il ne
 manque jamais de mentionner en entretien.
 

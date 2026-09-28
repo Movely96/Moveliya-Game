@@ -84,7 +84,27 @@ login form (only use this on your own lab, never on real systems)
 ```bash
 sudo apt install hydra -y
 ```
+**cupp** - generates smart password guesses from real facts about a
+person (name, birth year, pet name, etc.) instead of guessing
+randomly. This is the core OSINT technique this lab is built around.
 
+```bash
+sudo apt install cupp -y
+cupp -i
+```
+
+It will ask you a series of questions about the target (first name,
+birth year, nickname, pet name, and so on). Answer using what you
+learned from the OSINT materials. It then saves a custom wordlist
+file (named after the first name you entered) full of likely
+password combinations.
+
+You can then feed that wordlist into hydra to test it against the
+VM account or the web portal login:
+
+```bash
+hydra -l username -P generated_wordlist.txt ssh://localhost
+```
 ## 7. Basic commands you'll need
 
 **Switch to another user account (once you have a password):**
