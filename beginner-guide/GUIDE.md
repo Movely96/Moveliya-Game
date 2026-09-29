@@ -2,6 +2,44 @@
 
 Never used a virtual machine or a terminal before? Start here.
 
+## Two ways to run the lab
+
+- **Docker (easiest, any OS)** - one command, no virtual machine.
+  Jump to section **0. The Docker way** below.
+- **Virtual machine** - the classic setup. Continue from section
+  **1. What you need**.
+
+Both give you the identical game. If you just want to play, use
+Docker.
+
+## 0. The Docker way (recommended)
+
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+   (macOS/Windows) or Docker Engine (Linux) and start it. New to Docker?
+   See [roadmap.sh/docker](https://roadmap.sh/docker).
+2. In a terminal:
+   ```bash
+   git clone <repo-url>
+   cd moveliya-game
+   docker compose up --build
+   ```
+3. Leave that running. The lab is now two things you attack from
+   your own machine:
+   - **Web portal:** http://localhost:8080/gce/home.php
+   - **SSH host:** `localhost` on port `2222`
+
+Now skip ahead to section **6. Tools you'll use** - the OSINT and
+recon steps are the same. The only difference is the targets:
+
+- Scan the SSH host with `nmap -p- localhost` (or `nmap -p 2222 localhost`).
+- Brute-force SSH with `hydra ... ssh://localhost:2222`.
+- Log in with `ssh nassit@localhost -p 2222` (once you've worked
+  out a password) instead of `su - nassit`.
+- Find hidden files in each home directory with `ls -la` and
+  `cat`, exactly as described later.
+
+When you're finished, stop the lab with `docker compose down`.
+
 ## 1. What you need
 
 This lab runs inside a Linux virtual machine (VM). Your own computer
