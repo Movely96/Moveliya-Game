@@ -1,0 +1,7 @@
+# Keep LF for files that run inside Linux containers, even on Windows checkouts.
+*.sh   text eol=lf
+*.php  text eol=lf
+*.css  text eol=lf
+Dockerfile text eol=lf
+robots.txt text eol=lf
+docker-compose.yml text eol=lf
