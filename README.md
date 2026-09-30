@@ -28,62 +28,28 @@ your targets:
 
 ## Getting started
 
-There are two ways to run the lab. Both give the exact same game
-(same accounts, credentials, and flag).
-
-### Option A - Docker (recommended, works on macOS/Windows/Linux)
-
-The whole lab is packaged as two containers, so you don't need a
-virtual machine. You only need [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-(macOS/Windows) or Docker Engine (Linux).
-
-```bash
-git clone <repo-url>
-cd moveliya-game
-docker compose up --build
-```
-
-Then, from your own machine, treat these as the "lab" you're
-attacking:
-
-- **Web portal:** http://localhost:8080 (start at
-  `http://localhost:8080/gce/home.php`; there's a `robots.txt` at
-  `http://localhost:8080/robots.txt`)
-- **SSH host:** `localhost` on port `2222` - your `nmap` / `hydra`
-  target, and where you `ssh` in once you have a password
-
-When you're done: `docker compose down`.
-
-### Option B - Virtual machine
-
-The original VM path still works. See `beginner-guide/GUIDE.md`
-for the full walkthrough (VirtualBox/UTM + `vm-setup/setup.sh`).
+New to this? Start with `beginner-guide/GUIDE.md` first - it covers
+everything you need, including software installation and basic
+terminal/network scanning commands. Works whether you're on
+Windows, macOS, or Linux.
 
 ## Structure
 moveliya-game/
 ├── osint-materials/ Character dossiers for OSINT research
-├── vm-setup/ VM setup script + images (Option B)
-├── docker/ Container sources for the web + ssh lab (Option A)
-├── docker-compose.yml Brings the whole lab up with one command
+├── vm-setup/ Setup script + images to build the lab
 └── beginner-guide/ Step-by-step guide for total beginners
 
 
 ## Important note for whoever sets up the lab
 
-Both the `vm-setup/setup.sh` script and the files under `docker/`
-contain all the real passwords in plain text (that's how the lab
-is built). Whichever option you use, run it somewhere the players
-can't read the source, then hand players only the running lab -
-not this repository:
+The `vm-setup/setup.sh` script contains all the real passwords in
+plain text. After running it inside your VM, delete the cloned
+repository folder so players can't just read the script to find
+the answers:
 
 ```bash
-# VM option: after running setup.sh inside the VM
 cd ~
 rm -rf moveliya-game
-
-# Docker option: build/run on your own machine, then give players
-# only the two endpoints (http://localhost:8080 and ssh port 2222),
-# not the docker/ folder.
 ```
 
 ## Rules
