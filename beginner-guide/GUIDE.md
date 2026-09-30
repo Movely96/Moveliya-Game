@@ -100,11 +100,16 @@ file (named after the first name you entered) full of likely
 password combinations.
 
 You can then feed that wordlist into hydra to test it against the
-VM account or the web portal login:
+VM SSH accounts:
 
 ```bash
 hydra -l username -P generated_wordlist.txt ssh://localhost
 ```
+
+Note: only the SSH accounts are meant to be cracked this way. The
+web portal passwords are long and random - you will not guess them
+with a wordlist. Once you are inside an account over SSH, look for
+hidden files (`ls -la`); the portal credentials are stored there.
 ## 7. Basic commands you'll need
 
 **Switch to another user account (once you have a password):**
@@ -127,8 +132,11 @@ cat filename.txt
 - Re-read the OSINT materials carefully - the details that seem
   unimportant are often the key
 - Not every clue is real - some are decoys
-- Try each account's credentials on both the VM login AND the web
-  portal login - they are not always the same
+- The SSH password and the web portal password for the same person
+  are different - the portal one is hidden inside the account, not
+  guessed
+- Not every account leads to the flag - the exam materials belong to
+  whoever handles exam administration
 
 Good luck, and have fun learning.
 

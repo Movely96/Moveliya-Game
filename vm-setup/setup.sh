@@ -258,7 +258,7 @@ GCE combines rigorous technical training with hands-on practice, preparing stude
 <h2>Our Leadership</h2>
 <p class="subtitle">Guided by experienced educators and administrators</p>
 <div class="leader-grid">
-<div class="leader-card"><img src="assets/nassit.jpeg" class="leader-photo" alt="Abdelmajid Nassit"><h3>Abdelmajid Nassit</h3><p class="role">Director</p><p>25+ years in civil engineering education, FSTBM alumnus.</p></div>
+<div class="leader-card"><div class="leader-avatar">AN</div><h3>Abdelmajid Nassit</h3><p class="role">Director</p><p>25+ years in civil engineering education, FSTBM alumnus.</p></div>
 <div class="leader-card"><img src="assets/mehdi.jpeg" class="leader-photo" alt="Mehdi Med Ali"><h3>Mehdi Med Ali</h3><p class="role">Deputy Director</p><p>Former Structural Mechanics professor, published researcher.</p></div>
 <div class="leader-card"><div class="leader-avatar">JL</div><h3>Jannat Lmilali</h3><p class="role">Secretary </p><p>Manages students.</p></div>
 </div>
@@ -636,7 +636,7 @@ $user = $_SESSION['user'];
 <div class="news-item"><h3>Rattrapage Request - Saad El Allali</h3><p>Requesting a makeup exam for Structural Mechanics.</p></div>
 <div class="news-item"><h3>Rattrapage Request - Hiba El Miknassi</h3><p>Requesting a makeup exam for Geotechnical Engineering.</p></div>
 <div class="news-item"><h3>Rattrapage Request - Eren Yeager</h3><p>Requesting a makeup exam for Structural Mechanics.</p></div>
-<div class="news-item"><h3>YARBIIII SALAAMAAAA MN HAD LKUSSALA YALAATIF</h3>
+<div class="news-item"><h3>YARBIIII SALAAMAAAA MN HAD LKUSSALA YALAATIF</h3></div>
 <?php else: ?>
 <div class="news-item">No new messages.</div>
 <?php endif; ?>
@@ -690,7 +690,6 @@ EOF
 # ---- Copy character images ----
 echo "[*] Copying images..."
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-sudo cp "$SCRIPT_DIR/assets/nassit.jpeg" /var/www/html/gce/assets/nassit.jpeg
 sudo cp "$SCRIPT_DIR/assets/mehdi.jpeg" /var/www/html/gce/assets/mehdi.jpeg
 sudo cp "$SCRIPT_DIR/assets/wrong.jpeg" /var/www/html/gce/assets/wrong.jpeg
 sudo cp "$SCRIPT_DIR/assets/right.jpeg" /var/www/html/gce/assets/right.jpeg

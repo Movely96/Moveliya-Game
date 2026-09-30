@@ -10,7 +10,7 @@ system, but credentials are needed first.
 
 Three staff members at GCE (Genie Civil Engineering School) are
 your targets:
-- Abdelmajid Sandal - Director
+- Abdelmajid Nassit - Director
 - Mehdi Med Ali - Deputy Director
 - Jannat Lmilali - Administrative Secretary
 
@@ -22,8 +22,8 @@ your targets:
    are decoys.
 3. Use the clues to figure out each account's password
 4. Log into the lab VM accounts and look for hidden files
-6. Check for common recon files that might reveal hidden paths
-7. Use what you found to log into the GCE web portal and retrieve
+5. Check for common recon files that might reveal hidden paths
+6. Use what you found to log into the GCE web portal and retrieve
    the real flag
 
 ## Getting started
@@ -42,15 +42,23 @@ moveliya-game/
 
 ## Important note for whoever sets up the lab
 
-The `vm-setup/setup.sh` script contains all the real passwords in
-plain text. After running it inside your VM, delete the cloned
-repository folder so players can't just read the script to find
-the answers:
+The `vm-setup/setup.sh` script contains all the real passwords and
+the flag in plain text. After running it inside your VM, delete the
+cloned repository folder so players can't just read the script to
+find the answers:
 
 ```bash
 cd ~
 rm -rf moveliya-game
 ```
+
+WARNING: deleting the local folder is not enough if this repo is
+public. Anyone can read `vm-setup/setup.sh` directly on GitHub and
+get every password and the flag without playing. For a real
+challenge, host the players' copy from a PRIVATE repo (or hand them
+only the built lab, not this repo). The public Docker images
+(`anasswb/*`) already contain the built lab, so players never need
+this script at all.
 
 ## Rules
 
