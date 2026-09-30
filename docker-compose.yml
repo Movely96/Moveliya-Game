@@ -10,14 +10,14 @@
 # the original VM setup.
 services:
   web:
-    build: ./docker/web
+    image: anasswb/moveliya-web:latest
     container_name: moveliya-web
     ports:
       - "8080:80"
     restart: unless-stopped
 
   ssh:
-    build: ./docker/ssh
+    image: anasswb/moveliya-ssh:latest
     container_name: moveliya-ssh
     ports:
       - "2222:22"
