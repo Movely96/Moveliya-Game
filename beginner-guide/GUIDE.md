@@ -2,6 +2,39 @@
 
 Never used a virtual machine or a terminal before? Start here.
 
+## Two ways to run this lab
+
+- **Easy (recommended, any OS incl. Windows): Docker.** No VM, no
+  Ubuntu install. See "Easy way" just below.
+- **Advanced: a full Ubuntu VM.** More setup, but a real desktop
+  Linux to explore. That's sections 1-8 further down.
+
+Either way, once the lab is running the OSINT/cracking steps
+(cupp, nmap, hydra, ssh) are the same.
+
+## Easy way: Docker (Windows / macOS / Linux)
+
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+   and start it.
+2. Download this repo (green "Code" button > Download ZIP, then
+   unzip) or `git clone` it, and open a terminal in the folder.
+3. Start the lab:
+   ```bash
+   docker compose up --build
+   ```
+   On Windows you can instead right-click `start.ps1` > Run with
+   PowerShell (it launches everything and opens the browser).
+4. The lab is now reachable from your normal computer:
+   - Web portal: http://localhost:8080/gce/home.php
+   - SSH host:   `ssh <user>@localhost -p 2222`
+     (nmap/hydra target: `localhost -p 2222`)
+5. Install the OSINT tools (nmap, hydra, cupp) either on your host
+   or in any small Linux shell, and jump to section 6 below.
+6. When you're done: `docker compose down` (or `stop.ps1`).
+
+The rest of this guide (sections 1-5) is only for the full Ubuntu
+VM route. Skip it if you used Docker.
+
 ## 1. What you need
 
 This lab runs inside a Linux virtual machine (VM). Your own computer

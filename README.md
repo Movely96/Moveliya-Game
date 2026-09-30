@@ -16,7 +16,7 @@ your targets:
 
 ## How it works
 
-1. Set up the lab (see `vm-setup/`)
+1. Set up the lab (`docker compose up --build`, or `vm-setup/` on Linux)
 2. Dig through `osint-materials/` - treat it like real open-source
    intelligence gathering. Not everything is useful; some details
    are decoys.
@@ -28,37 +28,64 @@ your targets:
 
 ## Getting started
 
-New to this? Start with `beginner-guide/GUIDE.md` first - it covers
-everything you need, including software installation and basic
-terminal/network scanning commands. Works whether you're on
-Windows, macOS, or Linux.
+New to this? Start with `beginner-guide/GUIDE.md` - it covers the
+tools and basic terminal/network scanning commands.
+
+### Quick start (Windows / macOS / Linux) - recommended
+
+You do **not** need an Ubuntu VM. The whole lab runs in Docker and
+works the same on every OS. Install
+[Docker Desktop](https://www.docker.com/products/docker-desktop/),
+start it, then from this folder:
+
+```bash
+docker compose up --build
+```
+
+Windows users can instead just double-click / run `start.ps1`
+(right-click > Run with PowerShell). It builds and launches the lab
+and opens the browser for you. Stop it with `stop.ps1`.
+
+Once it's up:
+- Web portal: http://localhost:8080/gce/home.php
+- SSH host:   `ssh <user>@localhost -p 2222` (nmap/hydra target: `localhost -p 2222`)
+
+### Alternative: native Ubuntu/Debian VM
+
+Advanced/offline setups can build the lab directly on a Linux
+machine with `vm-setup/setup.sh` (installs Apache/PHP/OpenSSH and
+creates the accounts). See `beginner-guide/GUIDE.md`.
 
 ## Structure
+```
 moveliya-game/
+├── web/             GCE web portal (PHP) + Dockerfile
+├── ssh/             SSH lab host: accounts + hidden files + Dockerfile
 ├── osint-materials/ Character dossiers for OSINT research
-├── vm-setup/ Setup script + images to build the lab
-└── beginner-guide/ Step-by-step guide for total beginners
+├── vm-setup/        Native Ubuntu/Debian setup script
+├── beginner-guide/  Step-by-step guide for total beginners
+├── docker-compose.yml
+└── start.ps1 / stop.ps1   Windows launchers
+```
 
 
 ## Important note for whoever sets up the lab
 
-The `vm-setup/setup.sh` script contains all the real passwords and
-the flag in plain text. After running it inside your VM, delete the
-cloned repository folder so players can't just read the script to
-find the answers:
+The answers live in plain text in this repo:
+- SSH passwords + hidden portal creds: `ssh/create-users.sh`
+- Web portal passwords: `web/gce/config.php`
+- The flag: `web/gce/exams.php`
 
-```bash
-cd ~
-rm -rf moveliya-game
-```
+WARNING: **do not give players this repo.** If the repo is public
+(or you hand them the folder), anyone can read those files and get
+every password and the flag without playing.
 
-WARNING: deleting the local folder is not enough if this repo is
-public. Anyone can read `vm-setup/setup.sh` directly on GitHub and
-get every password and the flag without playing. For a real
-challenge, host the players' copy from a PRIVATE repo (or hand them
-only the built lab, not this repo). The public Docker images
-(`anasswb/*`) already contain the built lab, so players never need
-this script at all.
+For a real challenge, run the lab yourself and give players only
+network access to it:
+- Build and start it (`docker compose up --build` or `start.ps1`).
+- Players interact only with `localhost:8080` and `localhost:2222`
+  (or your host's IP) - they never see the source.
+- Keep this repo private.
 
 ## Rules
 
