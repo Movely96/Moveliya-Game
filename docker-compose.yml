@@ -1,0 +1,24 @@
+# Moveliya Game - cross-platform lab (macOS / Windows / Linux) via Docker.
+#
+#   docker compose up --build
+#
+# Then, from your host machine, treat these two containers as the "lab VM":
+#   - Web portal : http://localhost:8080  (start at /home.php, robots.txt at /robots.txt)
+#   - SSH host   : ssh <user>@localhost -p 2222   (nmap/hydra target: localhost -p 2222)
+#
+# Everything runs locally and offline. Same accounts, credentials and flag as
+# the original VM setup.
+services:
+  web:
+    image: anasswb/moveliya-web:latest
+    container_name: moveliya-web
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  ssh:
+    image: anasswb/moveliya-ssh:latest
+    container_name: moveliya-ssh
+    ports:
+      - "2222:22"
+    restart: unless-stopped
